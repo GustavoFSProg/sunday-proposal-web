@@ -1,5 +1,5 @@
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import Register from './pages/Register'
 
 export default function Routes() {

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-// import api from '../../services/api'
 import api from '../../services/api'
 
 interface IUsers {
@@ -23,7 +22,6 @@ function Home() {
     return data
   }
 
- 
   useEffect(() => {
     handleUsers()
   }, [])

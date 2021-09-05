@@ -25,6 +25,10 @@ function Register() {
     }
   }
 
+  function navigateHome() {
+    history.push('/')
+  }
+
   return (
     <div>
       <h1>Entrou na Register</h1>
@@ -58,6 +62,11 @@ function Register() {
 
         <button type="submit">Cadastrar</button>
       </form>
+      <br />
+      <br />
+      <button onClick={navigateHome} type="button">
+        Home
+      </button>
     </div>
   )
 }

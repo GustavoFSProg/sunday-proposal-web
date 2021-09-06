@@ -52,10 +52,10 @@ function Details() {
     history.push('/')
   }
 
-  useEffect(() => {
-    handleDetails()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  handleDetails()
+  // useEffect(() => {
+  //   handleDetails()
+  // }, [])
 
   return (
     <>

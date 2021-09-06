@@ -19,9 +19,7 @@ function Details() {
 
   const history = useHistory()
 
-  async function handleDetails(event: any) {
-    event.preventDefault()
-
+  async function handleDetails() {
     const id = localStorage.getItem('ID')
     const { data } = await api.get(`/get-id/${id}`)
 

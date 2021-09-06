@@ -28,7 +28,6 @@ function Details() {
     // setName(users.name)
     // setEmail(users.email)
     // setPassword(users.password)
-    history.push('/')
     return data
   }
 
@@ -42,6 +41,8 @@ function Details() {
       console.log(id)
 
       await api.put(`/update/${id}`, data)
+
+      history.push('/')
 
       return alert('Deu certo')
     } catch (error) {

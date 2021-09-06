@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
-import { Container, Button, Ul, Li } from './styles'
+import { Container, Button, Input } from './styles'
 
 // interface IUsers {
 //   _id: string
@@ -13,16 +13,36 @@ import { Container, Button, Ul, Li } from './styles'
 
 function Details() {
   const [users, setUsers]: any = useState([])
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   const history = useHistory()
 
+  const id = localStorage.getItem('ID')
   async function handleDetails() {
-    const id = localStorage.getItem('ID')
-
     const { data } = await api.get(`/get-id/${id}`)
 
     setUsers(data)
 
     return data
+  }
+
+  async function handleUpdate(e: any) {
+    e.preventDefault()
+    try {
+      // const id = localStorage.getItem('ID')
+
+      const data = { name, email, password }
+
+      console.log(id)
+
+      await api.put(`/update/${id}`, data)
+
+      return alert('Deu certo')
+    } catch (error) {
+      return alert('ERRO')
+    }
   }
 
   function navigateHome() {
@@ -31,6 +51,7 @@ function Details() {
 
   useEffect(() => {
     handleDetails()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -44,15 +65,29 @@ function Details() {
         <br />
 
         <Container>
-          <Ul>
-            <Li>
-              <b>Nome: </b> {users.name}
-            </Li>
-            <Li>
-              <b>Email: </b>
-              {users.email}
-            </Li>
-          </Ul>
+          <form onSubmit={handleUpdate}>
+            <Input
+              type="text"
+              name="name"
+              placeholder={users.name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              type="email"
+              placeholder={users.email}
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+            />
+            <Input
+              type="password"
+              placeholder={users.password}
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <br />
+
+            <Button type="submit">Editar</Button>
+          </form>
         </Container>
       </Container>
     </>

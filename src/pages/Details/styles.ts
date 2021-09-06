@@ -5,38 +5,25 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
-export const Ul = styled.ul`
-  list-style: none;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #004080;
-  border-radius: 5px;
   width: 100%;
-  background: #e6e6e6;
+  height: 100%;
+`
+export const Input = styled.input`
+  width: 80%;
+  height: 40px;
+  font-size: 15px;
+  padding-left: 12px;
+  color: darkblue;
+  border: 1px solid gray;
+  border-radius: 8px;
+  margin-bottom: 8px;
 `
 
-export const Li = styled.ul`
-  list-style: none;
-  font-size: 17px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-top: 16px;
-  padding-left: 7px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-`
 export const Button = styled.button`
-  width: 37%;
+  width: 83%;
   background: #0080ff;
   color: white;
-  height: 41px;
+  height: 40px;
   border-radius: 7px;
   border-color: transparent;
   cursor: pointer;

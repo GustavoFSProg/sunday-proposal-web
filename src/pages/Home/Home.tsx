@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
+import { Container, Button, Ul, Li } from './styles'
 
 interface IUsers {
   _id: string
@@ -34,23 +35,28 @@ function Home() {
 
   return (
     <>
-      <div>
-        <h1>Entrou na Home</h1>
+      <Container>
+        <h1> Home</h1>
+        <Button onClick={navigatgeRegister} type="button">
+          Register
+        </Button>
 
-        {users.map((item: IUsers) => {
-          return (
-            <ul key={item._id}>
-              <li>{item.name}</li>
-              <li>{item.email}</li>
-              <li>{item.password}</li>
-            </ul>
-          )
-        })}
-      </div>
-
-      <button onClick={navigatgeRegister} type="button">
-        Register
-      </button>
+        <Container>
+          {users.map((item: IUsers) => {
+            return (
+              <Ul key={item._id}>
+                <Li>
+                  <b>Nome: </b> {item.name}
+                </Li>
+                <Li>
+                  <b>Email: </b>
+                  {item.email}
+                </Li>
+              </Ul>
+            )
+          })}
+        </Container>
+      </Container>
     </>
   )
 }

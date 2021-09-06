@@ -62,14 +62,21 @@ function Details() {
     <>
       <Container>
         <h2 style={{ color: 'blue', fontFamily: 'Arial', marginBottom: '35px' }}>Home</h2>
-        <Button onClick={navigateHome} type="button">
+        <Button
+          style={{ width: '41.2%', marginLeft: '-19px' }}
+          onClick={navigateHome}
+          type="button"
+        >
           Home
         </Button>
 
         <br />
 
         <Container>
-          <form onSubmit={handleUpdate}>
+          <form
+            style={{ display: 'flex', flexDirection: 'column', width: '50%', marginLeft: '100px' }}
+            onSubmit={handleUpdate}
+          >
             <Input
               type="text"
               name="name"

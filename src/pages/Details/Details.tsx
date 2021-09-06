@@ -24,6 +24,9 @@ function Details() {
     const { data } = await api.get(`/get-id/${id}`)
 
     setUsers(data)
+    // setName(users.name)
+    // setEmail(users.email)
+    // setPassword(users.password)
 
     return data
   }

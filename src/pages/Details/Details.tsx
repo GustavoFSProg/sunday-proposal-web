@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
 import { Container, Button, Input } from './styles'

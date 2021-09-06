@@ -15,6 +15,12 @@ function Home() {
   const [users, setUsers] = useState([])
   const history = useHistory()
 
+  function handleDetails(id: any) {
+    localStorage.setItem('ID', id)
+
+    history.push('/details')
+  }
+
   async function handleUsers() {
     const { data } = await api.get('/')
 
@@ -51,6 +57,15 @@ function Home() {
                 <Li>
                   <b>Email: </b>
                   {item.email}
+                </Li>
+                <Li>
+                  <Button
+                    type="button"
+                    style={{ width: '110%' }}
+                    onClick={() => handleDetails(item._id)}
+                  >
+                    Detalhes
+                  </Button>
                 </Li>
               </Ul>
             )

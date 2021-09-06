@@ -36,7 +36,7 @@ function Home() {
   return (
     <>
       <Container>
-        <h1> Home</h1>
+        <h2 style={{ color: 'blue', fontFamily: 'Arial', marginBottom: '35px' }}>Home</h2>
         <Button onClick={navigatgeRegister} type="button">
           Register
         </Button>

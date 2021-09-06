@@ -33,11 +33,21 @@ export const Li = styled.ul`
   padding-bottom: 10px;
 `
 export const Button = styled.button`
-  width: 34%;
+  width: 37%;
   background: #0080ff;
   color: white;
-  height: 35px;
+  height: 41px;
   border-radius: 7px;
   border-color: transparent;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &:hover {
+    background: blue;
+  }
 `

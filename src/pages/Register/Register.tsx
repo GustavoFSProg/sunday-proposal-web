@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import api from '../../services/api'
 import { useHistory } from 'react-router-dom'
+import { Container, Input, Button } from './styles'
 
 function Register() {
   const [name, setName] = useState('')
@@ -30,44 +31,58 @@ function Register() {
   }
 
   return (
-    <div>
-      <h1>Entrou na Register</h1>
-
-      <form onSubmit={handleUsers}>
-        <input
+    <Container>
+      <h2 style={{ color: 'blue', fontFamily: 'Arial', marginBottom: '35px' }}>
+        Cadastro de Usuários
+      </h2>
+      <form
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
+        }}
+        onSubmit={handleUsers}
+      >
+        <div style={{ marginBottom: '8px', float: 'left', marginLeft: '-275px' }}>Nome:</div>
+        <Input
           type="text"
           onChange={(e) => setName(e.target.value)}
           name="name"
           placeholder="Nome"
         />
         <br />
-        <br />
-        <input
+        <div style={{ marginBottom: '8px', float: 'left', marginLeft: '-275px' }}>Email:</div>
+
+        <Input
           type="email"
           name="email"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
         />
         <br />
-        <br />
+        <div style={{ marginBottom: '8px', float: 'left', marginLeft: '-275px' }}>Senha:</div>
 
-        <input
+        <Input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           name="password"
           placeholder="Senha"
         />
         <br />
-        <br />
 
-        <button type="submit">Cadastrar</button>
+        <Button type="submit">Cadastrar</Button>
       </form>
+
       <br />
-      <br />
-      <button onClick={navigateHome} type="button">
+      <Button
+        onClick={navigateHome}
+        style={{ background: 'green', width: '27%', color: 'yellow' }}
+        type="button"
+      >
         Home
-      </button>
-    </div>
+      </Button>
+    </Container>
   )
 }
 

@@ -28,7 +28,7 @@ function Details() {
     // setEmail(users.email)
     // setPassword(users.password)
 
-    // return data
+    return data
   }
 
   async function handleUpdate(event: any) {

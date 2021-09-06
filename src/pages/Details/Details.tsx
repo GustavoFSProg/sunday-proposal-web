@@ -32,8 +32,8 @@ function Details() {
     return data
   }
 
-  async function handleUpdate(event: any) {
-    event.preventDefault()
+  async function handleUpdate(e: any) {
+    e.preventDefault()
     try {
       const id = localStorage.getItem('ID')
 
@@ -55,7 +55,7 @@ function Details() {
 
   useEffect(() => {
     handleDetails()
-  }, [handleDetails])
+  }, [])
 
   return (
     <>

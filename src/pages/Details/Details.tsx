@@ -54,7 +54,7 @@ function Details() {
 
   useEffect(() => {
     handleDetails()
-  }, [])
+  }, [handleDetails])
 
   return (
     <>

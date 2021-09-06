@@ -19,8 +19,8 @@ function Details() {
 
   const history = useHistory()
 
-  const id = localStorage.getItem('ID')
   async function handleDetails() {
+    const id = localStorage.getItem('ID')
     const { data } = await api.get(`/get-id/${id}`)
 
     setUsers(data)
@@ -28,13 +28,13 @@ function Details() {
     // setEmail(users.email)
     // setPassword(users.password)
 
-    return data
+    // return data
   }
 
-  async function handleUpdate(e: any) {
-    e.preventDefault()
+  async function handleUpdate(event: any) {
+    event.preventDefault()
     try {
-      // const id = localStorage.getItem('ID')
+      const id = localStorage.getItem('ID')
 
       const data = { name, email, password }
 

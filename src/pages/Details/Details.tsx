@@ -1,10 +1,10 @@
 import { useState } from 'react'
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
 import { Container, Button, Input } from './styles'
 
-// interface IUsers {
+// type IUsers = {
 //   _id: string
 //   name: string
 //   email: string
@@ -19,7 +19,9 @@ function Details() {
 
   const history = useHistory()
 
-  async function handleDetails() {
+  async function handleDetails(event: any) {
+    event.preventDefault()
+
     const id = localStorage.getItem('ID')
     const { data } = await api.get(`/get-id/${id}`)
 
@@ -52,10 +54,9 @@ function Details() {
     history.push('/')
   }
 
-  handleDetails()
-  // useEffect(() => {
-  //   handleDetails()
-  // }, [])
+  useEffect(() => {
+    handleDetails()
+  }, [])
 
   return (
     <>

@@ -28,7 +28,7 @@ function Details() {
     // setName(users.name)
     // setEmail(users.email)
     // setPassword(users.password)
-
+    history.push('/')
     return data
   }
 
